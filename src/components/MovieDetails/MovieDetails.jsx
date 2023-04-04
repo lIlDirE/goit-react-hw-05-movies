@@ -1,13 +1,13 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useEffect,  useState } from 'react';
+import {  useParams } from 'react-router-dom';
 import {fetchNewsMovie} from 'api/fetchMovies';
 
 const MovieDetails = () => {
 	const [movies, setMovies] = useState({});
 	const idMovie = useParams();
-	const location = useLocation();
-	const navigate = useNavigate();
-	const backLinkHref = useRef(location?.state?.from ?? '/');
+	// const location = useLocation();
+	// const navigate = useNavigate();
+	// const backLinkHref = useRef(location?.state?.from ?? '/');
 
 
 useEffect(() => {
