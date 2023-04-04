@@ -1,0 +1,20 @@
+.ulHome {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+  }
+  
+ .liHome {
+    float: left;
+  }
+  
+  .liHome .aHome {
+    display: block;
+    color: black;
+    text-align:left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
