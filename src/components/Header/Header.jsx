@@ -1,15 +1,14 @@
-import {UlHeader, LiHeader, Link, NavHeader} from './Header.styled'
+import { UlHeader, LiHeader, Link, NavHeader } from './Header.styled';
 
-const Header = () => {
-
+export const Header = () => {
   return (
     <header>
-      <NavHeader >
-        <UlHeader >
-          <LiHeader >
+      <NavHeader>
+        <UlHeader>
+          <LiHeader>
             <Link to="/">Home</Link>
           </LiHeader>
-          <LiHeader >
+          <LiHeader>
             <Link to="/movies">Movies</Link>
           </LiHeader>
         </UlHeader>
@@ -17,5 +16,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

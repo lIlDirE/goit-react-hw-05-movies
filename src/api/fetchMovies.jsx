@@ -1,18 +1,8 @@
-//https://api.themoviedb.org/3/trending/all/day?api_key=<<api_key>>
-
-const BASE_URL = 'https://api.themoviedb.org/3/';
-const media_type = 'movie/';
-const section = 'trending/'
-const time_window = 'day';
-
+const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '?api_key=4761bb7849595ee4cbf0e7a5e7d7ab74';
-const full_home_request =
-  BASE_URL + section + media_type + time_window + API_KEY;
-  
 
 export async function fetchMovies() {
-  const info = await fetch(`${full_home_request}`);
-
+  const info = await fetch(`${BASE_URL}/trending/movie/day${API_KEY}`);
   if (info.status === 200) {
     return info;
   }
@@ -20,7 +10,27 @@ export async function fetchMovies() {
 
 export async function fetchNewsMovie(idMovie) {
   const info = await fetch(`${BASE_URL}/movie/${idMovie.postId}${API_KEY}`);
+  if (info.status === 200) {
+    return info;
+  }
+}
 
+export async function fetchMovieReviews(idMovie) {
+  const info = await fetch(`${BASE_URL}/movie/${idMovie.postId}/reviews${API_KEY}&language=en-US&page=1`);
+  if (info.status === 200) {
+    return info;
+  }
+}
+
+export async function fetchMovieCast(idMovie) {
+  const info = await fetch(`${BASE_URL}/movie/${idMovie.postId}/credits${API_KEY}&language=en-US&page=1`);
+  if (info.status === 200) {
+    return info;
+  }
+}
+
+export async function fetchSearchMovie(search) {
+  const info = await fetch(`${BASE_URL}/search/movie${API_KEY}&query=${search}`);
   if (info.status === 200) {
     return info;
   }
