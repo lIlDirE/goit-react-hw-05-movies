@@ -3,6 +3,7 @@ import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { fetchNewsMovie } from 'api/fetchMovies';
 import MovieCast from './MovieInformation/MovieCast/MovieCast';
 import MovieReview from './MovieInformation/MovieReview/MovieReview';
+import css from './MovieDetails.module.css'
 
 const MovieDetails = () => {
   const [movies, setMovies] = useState({});
@@ -34,55 +35,54 @@ const MovieDetails = () => {
   };
 
   return (
-    <div>
-      <div>
-        <button
-          onClick={() => {
-            navigate(returnLink.current);
-          }}
-        >
-          return
-        </button>
-      </div>
-      {Object.keys(movies).length !== 0 && (
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
-            alt=""
-          />
-          <div>
-            <div>
-              <h2>{movies.title}</h2>
-              <p>User Schore: {(movies.vote_average * 10).toFixed()}%</p>
-            </div>
-            <div>
-              <strong>Overview</strong>
-              <p>{movies.overview}</p>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <div>
-                <strong>Genres</strong>
-                <p>{movies.genres.map(genre => genre.name).join(', ')}</p>
-              </div>
-            </div>
-            <div>
-              <Link onClick={renderReviews} to={'reviews'}>Reviews</Link>
+	<div className="movie-details">
+	  <div>
+		<button
+		  className="back-button"
+		  onClick={() => {
+			navigate(returnLink.current);
+		  }}
+		>
+		  Return
+		</button>
+	  </div>
+	  {Object.keys(movies).length !== 0 && (
+		<div className={css.movieInfo}>
+			<div>
+			<img
+			className={css.poster}
+			src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+			alt=""
+		  />
+			</div>
 
-              <Link onClick={renderCast} to={'cast'}>Cast</Link>
-            </div>
-
-            <div>
-              {showReview && <MovieReview />}
-              {showCast && <MovieCast />}
-            </div>
-          </div>
-        </div>
-        // {/* <Suspense fallback={<Loader />}>
-        //   <Outlet />
-        // </Suspense> */}
-      )}
-    </div>
+		  <div className={css.details}>
+			<div className={css.title}>
+			  <h2>{movies.title}</h2>
+			  <p className={css.score}>User Schore: {(movies.vote_average * 10).toFixed()}%</p>
+			</div>
+			<div className={css.overview}>
+			  <strong>Overview</strong>
+			  <p>{movies.overview}</p>
+			</div>
+			<div className={css.genres}>
+			  <strong>Genres</strong>
+			  <p>{movies.genres.map(genre => genre.name).join(', ')}</p>
+			</div>
+			<div className={css.links}>
+			  <Link onClick={renderReviews} to={'reviews'}>Reviews</Link>
+			  <Link onClick={renderCast} to={'cast'}>Cast</Link>
+			</div>
+			<div className={css.detailsContainer}>
+			  {showReview && <MovieReview />}
+			  {showCast && <MovieCast />}
+			</div>
+		  </div>
+		</div>
+	  )}
+	</div>
   );
+  
 };
 
 export default MovieDetails;

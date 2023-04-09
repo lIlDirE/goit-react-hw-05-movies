@@ -1,5 +1,33 @@
+.inputContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40px;
 
-.inputSearch{
-    display: flex;
-    align-items: center;
-}
+	height: 100px;
+  }
+  
+  .inputSearch {
+	position: relative;
+	width: 200px;
+	height: 40px;
+	margin: 0 10px;
+  }
+  
+  .inputSearch input {
+	width: 100%;
+	height: 100%;
+	border: 2px solid #ccc;
+	border-radius: 20px;
+	padding: 5px 20px;
+	font-size: 16px;
+	outline: none;
+	transition: all 0.3s ease;
+  }
+  
+  .inputSearch input:hover,
+  .inputSearch input:focus {
+	border-color: #0077ff;
+	box-shadow: 0 0 5px rgba(0, 119, 255, 0.5);
+  }
+  
