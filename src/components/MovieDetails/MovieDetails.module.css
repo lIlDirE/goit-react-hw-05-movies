@@ -7,18 +7,24 @@
   
   .backButton {
 	background-color: #333;
-	color: #fff;
 	font-size: 16px;
-	padding: 10px 20px;
-	border-radius: 5px;
-	border: none;
-	margin-bottom: 20px;
+	display: block;
+	color: white;
+	border: 0px;
+	text-align: center;
+	border-radius: 10px;
+	padding: 14px 16px;
+	margin: 20px 100px 40px 20px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
   }
   
-  .back-button:hover {
+  .backButton:hover {
 	background-color: #555;
+
+		color: white;
+		background-color: #04aa6d;
+
   }
   
   .movieInfo {
@@ -33,7 +39,7 @@
   .poster {
 	max-width: 300px;
 	height: auto;
-	margin-right: 100px;
+	margin: 20px 100px 40px 20px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
@@ -76,9 +82,14 @@
   }
   
   .links {
-	display: flex;
-	flex-direction: row;
-	margin-bottom: 20px;
+	display: block;
+	color: white;
+	background-color: rgb(170, 170, 170);
+	text-align: center;
+	border-radius: 10px;
+	padding: 14px 16px;
+	text-decoration: none;
+	margin: 0 20px;
   }
   
   .links a {
@@ -86,14 +97,19 @@
 	margin-right: 20px;
 	color: #333;
 	text-decoration: none;
+	padding: 8px 15px;
 	transition: color 0.3s ease;
+	border-radius: 20px;
+	transition: background-color 0.3s ease;
   }
   
   .links a:hover {
-	color: #555;
+    color: white;
+    background-color: #04aa6d;
   }
   
   .detailsContainer {
 	width: 100%;
   }
   
+

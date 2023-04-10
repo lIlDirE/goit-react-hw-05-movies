@@ -12,18 +12,16 @@ const MoviesList = ({ fetchData, state }) => {
   return (
 	<ul className={css.trendingWrap}>
 	  {listArr.map(trending => (
-				  <Link
+				  <Link key={trending.id}
 				  to={`${location.pathname !== `/movies` ? `/movies/` : ``}${trending.id}`}
 				  state={{ from: state }}
 				>
-		<li key={trending.id} className={css.trendingLi}>
+		<li  className={css.trendingLi}>
 
 			<div className={css.trendingImage}>
-			  {trending.backdrop_path !== undefined ? (
+			  {trending.backdrop_path !== null && (
 				<img src={`https://image.tmdb.org/t/p/w500${trending.backdrop_path}`} alt={trending.title} />
-			  ) : (
-				<img src="undefiend" alt="undefiend" />
-			  )}
+			  ) }
 			</div>
 			<div className={css.trendingTitle}>
 			  {trending.title}

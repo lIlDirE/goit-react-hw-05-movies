@@ -1,0 +1,33 @@
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.reviewItem {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin: 20px 100px 40px 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.reviewAuthor {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.reviewContent {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.reviewDate {
+  color: #999;
+  font-size: 12px;
+  margin-top: 10px;
+}

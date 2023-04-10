@@ -35,10 +35,10 @@ const MovieDetails = () => {
   };
 
   return (
-	<div className="movie-details">
+	<div className={css.movieDetails}>
 	  <div>
 		<button
-		  className="back-button"
+		  className={css.backButton}
 		  onClick={() => {
 			navigate(returnLink.current);
 		  }}
@@ -46,6 +46,7 @@ const MovieDetails = () => {
 		  Return
 		</button>
 	  </div>
+
 	  {Object.keys(movies).length !== 0 && (
 		<div className={css.movieInfo}>
 			<div>
@@ -69,7 +70,13 @@ const MovieDetails = () => {
 			  <strong>Genres</strong>
 			  <p>{movies.genres.map(genre => genre.name).join(', ')}</p>
 			</div>
-			<div className={css.links}>
+
+		  </div>
+
+
+		</div>
+	  )}
+	  		  <div className={css.links}>
 			  <Link onClick={renderReviews} to={'reviews'}>Reviews</Link>
 			  <Link onClick={renderCast} to={'cast'}>Cast</Link>
 			</div>
@@ -77,9 +84,6 @@ const MovieDetails = () => {
 			  {showReview && <MovieReview />}
 			  {showCast && <MovieCast />}
 			</div>
-		  </div>
-		</div>
-	  )}
 	</div>
   );
   

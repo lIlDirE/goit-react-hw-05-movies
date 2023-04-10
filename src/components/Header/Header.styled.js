@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const NavHeader = styled.nav`
 background-color: black;
 margin-bottom: 20px;
+
 `
 
 export const UlHeader = styled.ul`
@@ -13,6 +14,7 @@ export const UlHeader = styled.ul`
   overflow: hidden;
   top: 0;
   width: 100%;
+  margin: 0px 100px 40px 0px;
 `;
 
 export const LiHeader = styled.li`
@@ -20,7 +22,7 @@ export const LiHeader = styled.li`
   display: block;
   color: white;
   text-align: center;
-  padding: 20px 24px;
+  padding: 20px 20px;
   text-decoration: none;
 `;
 
@@ -31,31 +33,16 @@ export const Link = styled(NavLink)`
   border-radius: 10px;
   padding: 14px 16px;
   text-decoration: none;
+  
+  transition: background-color 0.3s ease;
 
   &.active {
     color: white;
     background-color: #04aa6d;
   }
+
+  &:hover {
+    color: black;
+    background-color: white;
+  }
 `;
-
-//  .liHeader {
-//     float: left;
-//   }
-
-//   .liHeader .aHeader {
-//     display: block;
-//     color: white;
-//     text-align: center;
-//     padding: 14px 16px;
-//     text-decoration: none;
-//   }
-
-//   /* Change the link color to #111 (black) on hover */
-// .aHeader:hover {
-
-//     background-color: #111;
-//   }
-
-//   .active {
-//     background-color: #04AA6D;
-//   }
