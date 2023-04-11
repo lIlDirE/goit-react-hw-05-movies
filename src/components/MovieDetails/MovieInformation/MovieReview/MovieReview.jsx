@@ -15,16 +15,24 @@ const MovieReview = () => {
 
     return (
       <div className={css.reviews}>
-        {Object.keys(fetchData).length !== 0 &&
-          fetchData.map(reviewItem => {
-            return (
-              <div className={css.reviewItem} key={reviewItem.id}>
-                <h3 className={css.reviewAuthor}>{reviewItem.author}</h3>
-                <p className={css.reviewContent}>{reviewItem.content}</p>
-                <p className={css.reviewDate}>{reviewItem.updated_at}</p>
-              </div>
-            );
-          })}
+        {Object.keys(fetchData).length !== 0 ? (
+			fetchData.map(reviewItem => {
+			return (
+				<div className={css.reviewItem} key={reviewItem.id}>
+				<h3 className={css.reviewAuthor}>{reviewItem.author}</h3>
+				<p className={css.reviewContent}>{reviewItem.content}</p>
+				<p className={css.reviewDate}>{reviewItem.updated_at}</p>
+				</div>
+			)
+			}) ) : (
+				<div>
+				<h2>No information found</h2>
+			</div>
+			)
+		
+
+		  
+		  }
       </div>
     );
 }

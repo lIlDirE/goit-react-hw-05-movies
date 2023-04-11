@@ -9,17 +9,20 @@ const Movies = () => {
   const location = useLocation();
   const [inputValue, setInputValue] = useSearchParams('');
   const [fetchObj, setFetcObj] = useState({});
+  const searchName = (inputValue.get('query') ?? '').trim();
 
   useEffect(() => {
     if (inputValue !== '') {
-      fetchSearchMovie(inputValue)
+      fetchSearchMovie(searchName)
         .then(data => data.json())
         .then(dataObj => setFetcObj(dataObj));
     }
-  }, [inputValue]);
+  }, [inputValue, searchName]);
 
   function handleChange(e) {
-    setInputValue(e.target.value);
+	if(e.target.value.trim() !== ''){
+		setInputValue({query: e.target.value.trim()});
+	}
   }
 
   return (

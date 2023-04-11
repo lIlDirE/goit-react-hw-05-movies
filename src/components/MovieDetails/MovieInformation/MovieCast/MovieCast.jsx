@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from 'api/fetchMovies';
-import css from './MovieCast.module.css'
+import css from './MovieCast.module.css';
 
 const MovieReview = () => {
   const [fetchData, setFetchData] = useState({});
@@ -15,7 +15,7 @@ const MovieReview = () => {
 
   return (
     <div className={css.credits}>
-      {Object.keys(fetchData).length !== 0 &&
+      {Object.keys(fetchData).length !== 0 ?(
         fetchData.map(creditsItem => {
           return (
             <div className={css.creditsItem} key={creditsItem.id}>
@@ -28,17 +28,23 @@ const MovieReview = () => {
                 />
               ) : (
                 <img
-                className={css.creditsImg}
-                src="https://www.smaroadsafety.com/wp-content/uploads/2022/06/no-pic.png"
-                alt={creditsItem.title}
-              />
+                  className={css.creditsImg}
+                  src="https://www.smaroadsafety.com/wp-content/uploads/2022/06/no-pic.png"
+                  alt={creditsItem.title}
+                />
               )}
             </div>
           );
-        })}
+        })
+		) : (
+			<div className={css.credits}>
+				<h2>No information found</h2>
+			</div>
+		)
+		
+		}
     </div>
   );
-  
 };
 
 export default MovieReview;

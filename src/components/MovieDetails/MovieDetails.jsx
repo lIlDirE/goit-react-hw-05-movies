@@ -12,7 +12,7 @@ const MovieDetails = () => {
   const [showCast, setShowCast] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const returnLink = useRef(location?.state?.from ?? '/');
+  const returnLink = useRef(location?.state?.search ?? '/');
 
   useEffect(() => {
     fetchNewsMovie(idMovie)
